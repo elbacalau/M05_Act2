@@ -67,6 +67,21 @@ class TreballadorTest(unittest.TestCase):
         self.assertEqual(treballador_meu.getHoresExtres(), 10)
 
 
+    def test_set_hores_extres_invalid(self):
+        """
+        Aquest test comprova si el programa detecta adequadament quan es vol
+        establir un nombre d'hores extres negatiu per a l'objecte `Treballador`.
+        Es crea un objecte `Treballador` i s'intenta establir un nombre d'hores
+        extres negatiu. S'espera que el programa llençi una excepció amb el missatge
+        'Les hores extres no poden ser un numero negatiu'.
+        """
+        treballador_meu = Treballador("pepa",0,2500,10)
+        with self.assertRaises(Exception) as cm:
+            treballador_meu.setHoresExtres(-1)
+        
+        self.assertEqual(str(cm.exception), 'Les hores extres no poden ser un numero negatiu')
+
+
     def test_set_tipus_treballador(self):
         """
         Aquest test verifica si el programa pot establir correctament el
@@ -91,3 +106,4 @@ class TreballadorTest(unittest.TestCase):
             treballador_meu.setTipusTreballador(3)
         
         self.assertEqual(str(cm.exception), 'Tipus de treballador no valid')
+

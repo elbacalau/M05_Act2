@@ -44,6 +44,12 @@ class Treballador:
        # Les hores extra poden ser zero sense problema
        self.horesExtresTreballador = hores
 
+       
+       # Si les hores extra son un numero negatiu salta exepcio
+       if hores < 0:
+           raise Exception("Les hores extres no poden ser un numero negatiu")
+    
+
 
    def getHoresExtres(self):
        return self.horesExtresTreballador
