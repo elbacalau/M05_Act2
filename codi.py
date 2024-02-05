@@ -17,7 +17,7 @@ class Treballador:
        #Si la longitud del nou nom es inferior a tres caracters llença excepcio
        if len(nom) < 3:
            raise Exception("El nom ha de tenir 3 o més caracters")
-       #En cas contrari assigna el nom
+       #En cas contrari assign a el nom
        self.nomTreballador = nom
 
 
@@ -26,10 +26,14 @@ class Treballador:
 
 
    def setNomina(self, euros):
-       #Per simplicitat no comprovem que la nomina és superior a zero ja que el
-       #programa no fallarà per aquest error
-       #i així ens estalviem les excepcions
-       self.nominaTreballador = euros
+        # Si la nomina es un numero negatiu salta exepcio
+        if euros < 0:
+            raise Exception("La nomina no pot ser un numero negatiu")
+
+        
+        self.nominaTreballador = euros
+
+
 
 
    def getNomina(self):
@@ -53,7 +57,7 @@ class Treballador:
            self.tipusTreballador = tipus
        else:
            #Si el tipus no és valid, creem excepció
-           raise Exception("Tipus de treballador no vàlid")
+           raise Exception("Tipus de treballador no valid")
 
 
    def getTipusTreballador(self):
