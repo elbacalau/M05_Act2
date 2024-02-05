@@ -18,6 +18,14 @@ Aquest test verifica si el programa pot establir correctament una nòmina vàlid
 
 Aquest test comprova si el programa pot establir correctament la quantitat d'hores extres per a l'objecte `Treballador`. Es crea un objecte `Treballador` i s'estableix un nombre d'hores extres. S'espera que el valor de les hores extres de l'objecte sigui igual al valor establert.
 
+## Test: `test_set_hores_extres_invalid`
+
+Aquest test comprova si el programa detecta adequadament quan es vol
+establir un nombre d'hores extres negatiu per a l'objecte `Treballador`.
+Es crea un objecte `Treballador` i s'intenta establir un nombre d'hores
+extres negatiu. S'espera que el programa llençi una excepció amb el missatge
+'Les hores extres no poden ser un numero negatiu'.
+
 ## Test: `test_set_tipus_treballador`
 
 Aquest test verifica si el programa pot establir correctament el tipus de treballador per a l'objecte `Treballador`. Es crea un objecte `Treballador` i s'estableix un nou tipus de treballador. S'espera que el tipus de treballador de l'objecte sigui igual al valor establert.
